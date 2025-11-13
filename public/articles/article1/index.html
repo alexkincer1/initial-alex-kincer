@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Sorting A Table | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Adding buttons to previously coded websites.">
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/articles/article1/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/articles/article1/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Sorting A Table">
+  <meta property="og:description" content="Adding buttons to previously coded websites.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+
+  <meta itemprop="name" content="Sorting A Table">
+  <meta itemprop="description" content="Adding buttons to previously coded websites.">
+  <meta itemprop="wordCount" content="1524">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sorting A Table">
+  <meta name="twitter:description" content="Adding buttons to previously coded websites.">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  
+  
+  
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/7b6b442822c8ba56fb6ff82f7bf04f1f.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me! page">
+              About Me!
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/articles/" title="My Articles! page">
+              My Articles!
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <h1 class="f1">
+          Sorting A Table
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links mid-gray">
+        <h2 id="prepping-for-assignment">Prepping for Assignment</h2>
+<p>For CSC 324, Fundamentals of Data Computing, at GC, we were given the following assignment titled &ldquo;Sorting A Table&rsquo; using VSCODE.</p>
+<p>The problem is described in full <a href="https://homerhanumat.github.io/csc324resources/exercises/table-sort.html">here</a>. For all homework problems for this course, we are required to push to our git repositories, which is noted in the link above. For this problem, we were given the task to build on a previous assignment titled Making-A-Table. The instructions and intent for this assignment is described <a href="https://homerhanumat.github.io/csc324resources/exercises/table.html">here</a>. However, my original submission for this problem was not ideal to build on, so I used Dr. White&rsquo;s key to complete Sorting A Table.</p>
+<blockquote>
+To begin, Dr. White gave us a custom.js file that defines an array called artists. This was the code we were given to add onto to create the two assignments that are discussed in the rest of this article. The code created an array that include 5 artists, their birth years, and a link to one of their youtube videos. For the array, the code included:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">artists</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ms Scandalous&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1985</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=2FPivlfvxu0&#34;</span>
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Juggy D&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1981</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=1jAc_-FVjdI&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sukhbir Singh&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1969</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=HiprNF9Jad0&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Abrar-ul-Haq&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1989</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=-lnnVIP7FEc&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Rishi Rich&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1970</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=O95-w2gACuA&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div></blockquote>
+<p>As I stated earlier, I copy and pasted Dr. White&rsquo;s code for <code>Table Assign</code> into my VSCODE to give a correct and buildable foundation to continue for this assignment.  In the remainder of the article I provide a detailed explanation of the solution-code for both his code and the edits and additions I made to the code to complete this task at hand.</p>
+<p>To preface,  when adjusting the &ldquo;randomizer&rdquo; button, I had tried a few whole numbers but wasn&rsquo;t really understanding their purpose. All I knew was, based on not using a number when I was originally attempting to create a solition, that a number was need. So, I asked chatGPT then eventually came to 0.5 as it only made sense to be a number that is used often, but couldn&rsquo;t be a whole number because I had just about tried every one possible. <a href="https://chatgpt.com/share/68f85092-7258-8002-808a-38db8bfeb79b">Here is my chatGPT conversation</a>. This conversation showed me that the 0.5 is needed as a pivot point to let sort randomly swap the elements being considered. If the number was not there, the automatic assumption would be that A&gt;B. This would cause little to no change in the array and there would not be a shuffle.</p>
+<h2 id="part-one-creating-the-table">Part One: Creating the Table</h2>
+<p>To being, I used the function <code>populateTable</code> to pass the <code>artists</code> variable as an arguemtn to use the data sorted within <code>artists</code> to display the table on my webpage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">artists</span>); 
+</span></span></code></pre></div><p>I then used <code>querySelector</code> lines to grab references from elements like the <code>nameButton</code> and repeat with the following date and random buttons. These lines find the HTML elements that create results to be stored in new constants labeled <code>nameButton</code>, <code>dateButton</code>, and <code>randomButton</code> to prepare for interactive items on my website.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#name-button&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dateButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#date-button&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">randomButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#random-button&#34;</span>);
+</span></span></code></pre></div><h2 id="part-two-creating-interactive-elements">Part Two: Creating Interactive Elements</h2>
+<h4 id="buttons">Buttons</h4>
+<p>Once the buttons were made, the following lines attached an event listener to each button element that was selected earlier.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#a6e22e">nameButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">sortbyName</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">dateButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">sortbyDate</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">randomButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">randomize</span>);
+</span></span></code></pre></div><p>The code lines aboce work in ways to tell the broswer what should happen when the buttons are clicked. For example, when the reader clicked the button stored in <code>nameButton</code> which would only be shown on the website as Name, the function <code>sortbyName</code> is ran and executed to re-sort the list of names in an alternate way than before.</p>
+<h4 id="making-the-buttons-work">Making the Buttons Work</h4>
+<p>Now, we define the <code>sortbyName</code> function mentioned above that will be a reusable block of code to perform the task of sorting the list of artists by their names. Line 2 here creates the message &ldquo;Sorting by Name&hellip;&rdquo; that will appear in the VSCODE console when the button is clicked and called.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sortbyName</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Sorting by name...&#34;</span>);
+</span></span></code></pre></div><p>The lines above do not actually sort anything, but log a message to be a place holder for future sorting code like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">byName</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span></code></pre></div><p>Here, the two parametes, a and b, are taken to define the function <code>byName</code>. a and b will represent the items being compared, which in this case are artist objects like &ldquo;Rishi Rich&rdquo;, etc.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>This line checks to see if the name property of a comes before the name of b alphabetically. If it does, -1 is returned to tell JavaScript that a needs to be put before b in the <code>sort()</code> function that is called.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>For when the opposite is true and b comes before a alphabetically, 1 is returned to tell JavaScript that be needs to come before a.</p>
+<p>However, if neither conidition is true and the name are alphabetically equal, the <code>sort()</code> function will return 0, while tells JavaScript to leave the order unchanged.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span></code></pre></div><h2 id="part-three-performing-the-action">Part Three: Performing the Action</h2>
+<h4 id="the-sorting">The Sorting</h4>
+<p>The following code explains the full <code>sortbyName()</code> function to sort the artists array, clear the old table content, and create a new and neatly sorted table to be displayed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sortedByName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">artists</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">byName</span>);
+</span></span></code></pre></div><p>To begin, the line above takes the artists array and uses the <code>byName</code> function we defined a few lines back to determine the order of the elements in alphabetical comparison to be sorted. The <code>sort()</code> method changes the original array and returns the sorted array to hold the new, sorted lists by name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tab</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#bhangra&#34;</span>);
+</span></span></code></pre></div><p>Next, the &ldquo;bhangara&rdquo; HTML element is found and determined to be the table where the artist data is displayed.</p>
+<p>I then cleared everything currently inside the &ldquo;bhangara&rdquo; element and used this line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span></code></pre></div><p>to &ldquo;reset&rdquo; the table before insert the newly sorted rows. If this line was not performed, there would be a chance of duplicates because the new rows would possibly get added to old ones.</p>
+<p>Finally, the existing table <code>populateTable()</code> is called with the new, sorted array instead of the original one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">sortedByName</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With the lines above, the table is re-built and displayed in alphabetical order by artist name.</p>
+<h4 id="repeating-for-following-buttons">Repeating for following Buttons</h4>
+<p>First, we will repeat the same steps for the sorting of the Date button for the rearranging.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sortbyDate</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Sorting by year...&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sortedByDate</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">artists</span>].<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">birthYear</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">birthYear</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">sortedByDate</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;date&#34;</span>);
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p>Now, we will repeat using the same steps for the sorting randomizing the table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomize</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Randomizing...&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shuffled</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">artists</span>].<span style="color:#a6e22e">sort</span>(() =&gt; Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">-</span> <span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">shuffled</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;random&#34;</span>);
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><h4 id="part-four-setting-up-the-table">Part Four: Setting up the Table</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span></code></pre></div><p>The line above defines the <code>populateTable</code> function that takes the array parameter, <code>arr</code>, and sets the goal being able to display its data inside the webpages HTML table.</p>
+<p>Then, the following line finds the HTML element and uses it to insert the rows of the data into the table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tab</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#bhangra&#34;</span>);
+</span></span></code></pre></div><h2 id="building-the-string-of-html-code">Building the string of HTML code</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;tbody&gt;&#34;</span>;
+</span></span></code></pre></div><p>The code above created a variable called <code>contents</code> to build up a string of HTML code by starting to open the <code>&lt;tbody&gt;</code> tag that is the beginning of where the rows will go in the tables body.</p>
+<p>For the following code, the backticks (`) are template literals which will allow for the multiline strings so the code would not require awkward +</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;tr&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Name&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Year of Birth&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Link&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/tr&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    `</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// now loop to make the data-rows:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">artist</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// open the row:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;tr&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">birthYear</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;&lt;a href=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; target = &#34;_blank&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/a&gt;&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// close the row:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tr&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// close out the table body:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tbody&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// now make contents be the inner html of
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the table:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">contents</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p>We are done!</p>
+<h2 id="full-code">Full Code</h2>
+<p>Here is a compelete solution ot the problem for readers for view below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">artists</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ms Scandalous&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1985</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=2FPivlfvxu0&#34;</span>
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Juggy D&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1981</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=1jAc_-FVjdI&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sukhbir Singh&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1969</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=HiprNF9Jad0&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Abrar-ul-Haq&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1989</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=-lnnVIP7FEc&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Rishi Rich&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">birthYear</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1970</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.youtube.com/watch?v=O95-w2gACuA&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">artists</span>); 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#name-button&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dateButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#date-button&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">randomButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#random-button&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">nameButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">sortbyName</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">dateButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">sortbyDate</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">randomButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">randomize</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sortbyName</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Sorting by name...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">byName</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sortedByName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">artists</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">byName</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tab</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#bhangra&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">sortedByName</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sortbyDate</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Sorting by year...&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sortedByDate</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">artists</span>].<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">birthYear</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">birthYear</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">sortedByDate</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;date&#34;</span>);
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomize</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Randomizing...&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shuffled</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">artists</span>].<span style="color:#a6e22e">sort</span>(() =&gt; Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">-</span> <span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">shuffled</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;random&#34;</span>);
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">populateTable</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tab</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#bhangra&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;tbody&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;tr&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Name&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Year of Birth&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Link&lt;/th&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/tr&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    `</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">artist</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;tr&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">birthYear</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;&lt;a href=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; target = &#34;_blank&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/a&gt;&lt;/td&gt;`</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tr&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tbody&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">contents</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div>
+      </div>
+    </article>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
