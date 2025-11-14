@@ -45,7 +45,7 @@
 
   <meta itemprop="name" content="Sorting A Table">
   <meta itemprop="description" content="Adding buttons to previously coded websites.">
-  <meta itemprop="wordCount" content="1524">
+  <meta itemprop="wordCount" content="1869">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Sorting A Table">
   <meta name="twitter:description" content="Adding buttons to previously coded websites.">
@@ -55,11 +55,8 @@
 
     
 
-  
-  
-  
-  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/7b6b442822c8ba56fb6ff82f7bf04f1f.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
@@ -99,9 +96,6 @@
   </div>
 </nav>
 
-      <div class="tc-l pv6 ph3 ph4-ns">
-        
-      </div>
     </div>
   </header>
 
@@ -216,7 +210,7 @@ To begin, Dr. White gave us a custom.js file that defines an array called artist
 </span></span></code></pre></div><h2 id="building-the-string-of-html-code">Building the string of HTML code</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;tbody&gt;&#34;</span>;
 </span></span></code></pre></div><p>The code above created a variable called <code>contents</code> to build up a string of HTML code by starting to open the <code>&lt;tbody&gt;</code> tag that is the beginning of where the rows will go in the tables body.</p>
-<p>For the following code, the backticks (`) are template literals which will allow for the multiline strings so the code would not require awkward +</p>
+<p>For the following code, the backticks (`) are template literals which will allow for the multiline strings so the code would not require awkward + and be easy to read.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;tr&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Name&lt;/th&gt;
@@ -224,27 +218,27 @@ To begin, Dr. White gave us a custom.js file that defines an array called artist
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;th&gt;Link&lt;/th&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/tr&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    `</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// now loop to make the data-rows:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">artist</span> =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// open the row:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;tr&gt;&#34;</span>;
+</span></span></code></pre></div><p>A few things from the code above to note include <code>&lt;tr&gt;</code> and <code>&lt;th&gt;</code>. <tr> means table row and <th> means table header which would assume to be centered and bold. This command creates the header row at the top of the table. The column names include <code>Name</code>, <code>Year of Birth</code>, and <code>Link</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">artist</span> =&gt; {
+</span></span></code></pre></div><p>The line above begins a loop that processes each artist in the list one by one as the <code>.forEach()</code> method runs the function one for each element in the <code>arr</code> array given.</p>
+<p>The arrow function then takes the current items are placed into the variables named artist to go one by one for each artist.</p>
+<p>Now, to open the rows and build one table row per artist:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;tr&gt;&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">birthYear</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;`</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;&lt;a href=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; target = &#34;_blank&#34;&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/a&gt;&lt;/td&gt;`</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// close the row:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tr&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&lt;td&gt;&lt;a href=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; target = &#34;_blank&#34;&gt;$
+</span></span></span></code></pre></div><p>The first line of the code above starts a new table row to give each artist a section. Next, the <code>&lt;td&gt;</code> table cell containing the artists name is added to use <code>${artist.name}</code> to insert the value of the name property. The same process is repeated for the birth years of the artists. Finally, the <code>&lt;td&gt;</code> cell for <code>artist.link</code> contains the link tag that inserts the URL from the artist object and makes the link capable of opening a new tab. The <code>$</code> at the end of this code chunk is used to cut the string off once the link is clickable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  {<span style="color:#a6e22e">artist</span>.<span style="color:#a6e22e">link</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/td&gt;`;</span>
+</span></span></code></pre></div><p>This code, following the one list prior, finishes up by ending the link, table cell, and the string to finish the link column in our table for each artist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tr&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// close out the table body:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tbody&gt;&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// now make contents be the inner html of
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the table:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">contents</span>;
+</span></span></code></pre></div><p>This line closes the HTML table row for the current artist to end the row function, <code>forEach</code> loop, and the JavaScript statement. We will now move on to close the <code>body</code> and insert the completed HTML into the table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">contents</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;/tbody&gt;&#34;</span>;
+</span></span></code></pre></div><p>As stated prior, this line of code closes the table body and finishes wrapping all of the rows. This line marks the end of the content area for the tables before assigning them to the HTML.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">tab</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">contents</span>;
 </span></span><span style="display:flex;"><span> }
-</span></span></code></pre></div><p>We are done!</p>
+</span></span></code></pre></div><p>To wrap up, the first line of this chunk inserts the generated HTML into the table on the webpage and uses the closing bracket to finally end the <code>populateTable</code> function. This final step renders the fully-constructed rows and information into the HTML table to make it appear in the appear.</p>
+<p>We are done!</p>
 <h2 id="full-code">Full Code</h2>
 <p>Here is a compelete solution ot the problem for readers for view below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">artists</span> <span style="color:#f92672">=</span> [

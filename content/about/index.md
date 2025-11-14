@@ -3,8 +3,9 @@ title: About Alex
 description: ""
 omit_header_text: false
 featured_image: images/C159EE83-9677-42CE-A547-2100D43CB7C1.jpeg
-type: page
 summary:  "Eastern Kentucky, Letcher County, Family, Education, Cheerleading, Running, Occupational Therapy, Alex Kincer"
+type: page
+weight: 2
 ---
 
 

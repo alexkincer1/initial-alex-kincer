@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Article 2 | My New Hugo Site</title>
+    <title>Chapter Five: Flattening a Loop | My New Hugo Site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Another sample programming article.">
+    <meta name="description" content="Flattening arrays into a single array while keeping all elements present.">
     <meta name="generator" content="Hugo 0.148.2">
     
     
@@ -37,29 +37,26 @@
 
     <meta property="og:url" content="http://localhost:1313/articles/article2/">
   <meta property="og:site_name" content="My New Hugo Site">
-  <meta property="og:title" content="Article 2">
-  <meta property="og:description" content="Another sample programming article.">
+  <meta property="og:title" content="Chapter Five: Flattening a Loop">
+  <meta property="og:description" content="Flattening arrays into a single array while keeping all elements present.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="articles">
 
-  <meta itemprop="name" content="Article 2">
-  <meta itemprop="description" content="Another sample programming article.">
-  <meta itemprop="wordCount" content="125">
+  <meta itemprop="name" content="Chapter Five: Flattening a Loop">
+  <meta itemprop="description" content="Flattening arrays into a single array while keeping all elements present.">
+  <meta itemprop="wordCount" content="580">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Article 2">
-  <meta name="twitter:description" content="Another sample programming article.">
+  <meta name="twitter:title" content="Chapter Five: Flattening a Loop">
+  <meta name="twitter:description" content="Flattening arrays into a single array while keeping all elements present.">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
 
     
 
-  
-  
-  
-  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/7b6b442822c8ba56fb6ff82f7bf04f1f.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
     <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
@@ -99,9 +96,6 @@
   </div>
 </nav>
 
-      <div class="tc-l pv6 ph3 ph4-ns">
-        
-      </div>
     </div>
   </header>
 
@@ -112,15 +106,67 @@
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <header>
         <h1 class="f1">
-          Article 2
+          Chapter Five: Flattening a Loop
         </h1>
       </header>
       <div class="nested-copy-line-height lh-copy f4 nested-links mid-gray">
-        <p>This article is an application of the Advent of Code 2022 Day 1 solution to the context of the browser.</p>
-<p>To see it in action, you would create a properly-formatted input file. That is, each line would contain just one number, or would be blank to indicate separation between packs.  Save the file somewhere on your computer and then use the input-field below to select it.</p>
-<p>The relevant JavaScript file is <a href="/js/advent-in-action.js">here</a>.  Use the Web Inspector tool on your browser to identify the elements on the html page that are accessed by the code.</p>
-<p><strong>Note:</strong>  You do not have to implement any of your Eloquent JavaScript solutions in the browser.  I wrote this article only to teach myself about reading user-provided files in the browser.</p>
-
+        <p>This article comes from information gathered in reading <a href="https://eloquentjavascript.net/05_higher_order.html">Chapter Five in Eloquent JavaScript</a>. Once the lesson was learned, CSC 324 provided <a href="https://homerhanumat.github.io/csc324resources/exercises/eloquent-ch05.html">this Homework Assignment</a>. This article will discuss and break down Exercise One, Flattening.</p>
+<h2 id="the-assignment-details">The Assignment Details</h2>
+<p>Use the reduce method in combination with the concat method to “flatten” an array of arrays into a single array that has all the elements of the original arrays.</p>
+<blockquote>
+Though I recieved this answer from classmate Jose's screenshare that prompted in-depth discussion for the CSC 324 class on Septmeber 25, 2025, I will use this article to explain line by line what the code is doing and why each function was chosen.
+</blockquote>
+<h2 id="solution">Solution</h2>
+<h4 id="creating-the-array">Creating the Array</h4>
+<p>This following line of code creates a variable called <code>arrays</code> that then lists the values assigned to it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrays</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]];
+</span></span></code></pre></div><p>The key component of this line is the term <code>let</code> that allows the declared variable to be able to be reassigned later.</p>
+<p>The way these values are listed is referred to as a nested array which hold three seperate arrays inside the one larger array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>), []);
+</span></span></code></pre></div><p>The above line begins the flattening process by using the <code>.reduce()</code> function to take one element from the array at a time and slowly build up a single value. Following this command, <code>acc</code> and <code>curr</code> are then used to move on. <code>acc</code> starts as [] and grows as numbers are added to ultimately become the flattened array. <code>curr</code> is used for the nested array to be kept as, in this case, three values for three steps. Finally, for this step, <code>.concat()</code> merges two arrays at a time to produce a flattened single array.</p>
+<p>The following line then prints the value of the flattened variable to the console. When this line is run, the array will print out into the console.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened</span>);
+</span></span></code></pre></div><p>The following line prints a similar string to the console but with an extra.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;\n Or &#34;</span>);
+</span></span></code></pre></div><p><code>\n</code> is a new line character that tells the console to move to the next line before printing the results. <code>Or</code> is the text that will be printed on the following line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrays2</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]];
+</span></span></code></pre></div><p>The line above creates a new variable called <code>arrays2</code> and assigns a three array nested array to it. Similar to earlier, this preps the arrays to be flattened.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays2</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>);
+</span></span><span style="display:flex;"><span> }, []);
+</span></span></code></pre></div><p>The code chunk above is the exact same as it was for <code>flattened</code> and <code>arrays</code> earlier so the arrays can be manipulated into being flattened.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened2</span>);
+</span></span></code></pre></div><p>Also like before, <code>console.log</code> is used to print the newly flattened set of arrays into one array.</p>
+<p>Finally, the following chunk is the same as both the original and test 2 to create, nest, and flatten an array using the same kind of commands but different numbers, etc. for the manipulation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays3</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>);
+</span></span><span style="display:flex;"><span>}, []);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened3</span>);
+</span></span></code></pre></div><p>We are done!</p>
+<h2 id="full-code">Full Code</h2>
+<p>Here is a compelete solution ot the problem for readers for view below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrays</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>), []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;\n Or &#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrays2</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>], [<span style="color:#ae81ff">6</span>]];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays2</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>);
+</span></span><span style="display:flex;"><span> }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arrays3</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flattened3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arrays3</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">curr</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">curr</span>);
+</span></span><span style="display:flex;"><span>}, []);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flattened3</span>);
+</span></span></code></pre></div>
       </div>
     </article>
   </div>

@@ -2,7 +2,7 @@
 title: "Sorting A Table"
 description: ""
 omit_header_text: true
-featured_image: images/7b6b442822c8ba56fb6ff82f7bf04f1f.jpg
+featured_image:
 summary: "Adding buttons to previously coded websites."
 type: page
 weight: 2
@@ -186,7 +186,8 @@ let contents = "<tbody>";
 ```
 The code above created a variable called `contents` to build up a string of HTML code by starting to open the `<tbody>` tag that is the beginning of where the rows will go in the tables body. 
 
-For the following code, the backticks (`) are template literals which will allow for the multiline strings so the code would not require awkward +
+For the following code, the backticks (`) are template literals which will allow for the multiline strings so the code would not require awkward + and be easy to read.
+
 ```js
 contents += `
     <tr>
@@ -195,27 +196,47 @@ contents += `
       <th>Link</th>
     </tr>
     `;
+```
+A few things from the code above to note include `<tr>` and `<th>`. <tr> means table row and <th> means table header which would assume to be centered and bold. This command creates the header row at the top of the table. The column names include `Name`, `Year of Birth`, and `Link`.
 
-// now loop to make the data-rows:
-
+```js
 arr.forEach(artist => {
-  // open the row:
+```
+The line above begins a loop that processes each artist in the list one by one as the `.forEach()` method runs the function one for each element in the `arr` array given. 
+
+The arrow function then takes the current items are placed into the variables named artist to go one by one for each artist. 
+
+Now, to open the rows and build one table row per artist:
+
+```js
   contents += "<tr>";
   contents += `<td>${artist.name}</td>`;
   contents += `<td>${artist.birthYear}</td>`;
-  contents += `<td><a href="${artist.link}" target = "_blank">${artist.link}</a></td>`;
-  // close the row:
+  contents += `<td><a href="${artist.link}" target = "_blank">$
+```
+The first line of the code above starts a new table row to give each artist a section. Next, the `<td>` table cell containing the artists name is added to use `${artist.name}` to insert the value of the name property. The same process is repeated for the birth years of the artists. Finally, the `<td>` cell for `artist.link` contains the link tag that inserts the URL from the artist object and makes the link capable of opening a new tab. The `$` at the end of this code chunk is used to cut the string off once the link is clickable. 
+
+```js
+  {artist.link}</a></td>`;
+```
+This code, following the one list prior, finishes up by ending the link, table cell, and the string to finish the link column in our table for each artist. 
+
+```js
   contents += "</tr>"
 });
+```
+This line closes the HTML table row for the current artist to end the row function, `forEach` loop, and the JavaScript statement. We will now move on to close the `body` and insert the completed HTML into the table. 
 
-// close out the table body:
+```js
 contents += "</tbody>";
+```
+As stated prior, this line of code closes the table body and finishes wrapping all of the rows. This line marks the end of the content area for the tables before assigning them to the HTML.
 
-// now make contents be the inner html of
-// the table:
+```js
 tab.innerHTML = contents;
  }
 ```
+To wrap up, the first line of this chunk inserts the generated HTML into the table on the webpage and uses the closing bracket to finally end the `populateTable` function. This final step renders the fully-constructed rows and information into the HTML table to make it appear in the appear. 
 
 We are done!
 

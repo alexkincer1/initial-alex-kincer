@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About Alex</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Eastern Kentucky, Letcher County, Family, Education, Cheerleading, Running, Occupational Therapy, Alex Kincer</description>
+    </item>
+    <item>
       <title>Sorting A Table</title>
       <link>http://localhost:1313/articles/article1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -15,18 +22,11 @@
       <description>Adding buttons to previously coded websites.</description>
     </item>
     <item>
-      <title>Article 2</title>
+      <title>Chapter Five: Flattening a Loop</title>
       <link>http://localhost:1313/articles/article2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/article2/</guid>
-      <description>Another sample programming article.</description>
-    </item>
-    <item>
-      <title>About Alex</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>Eastern Kentucky, Letcher County, Family, Education, Cheerleading, Running, Occupational Therapy, Alex Kincer</description>
+      <description>Flattening arrays into a single array while keeping all elements present.</description>
     </item>
   </channel>
 </rss>
