@@ -1,34 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>welcome! on My Website Warmup</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in welcome! on My Website Warmup</description>
+    <title>Filler on My Website Warmup</title>
+    <link>http://localhost:1313/tags/filler/</link>
+    <description>Recent content in Filler on My Website Warmup</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About Alex</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>Eastern Kentucky, Letcher County, Family, Education, Cheerleading, Running, Occupational Therapy, Alex Kincer</description>
-    </item>
-    <item>
-      <title>Sorting A Table</title>
-      <link>http://localhost:1313/articles/article1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/article1/</guid>
-      <description>Adding buttons to previously coded websites.</description>
-    </item>
-    <item>
-      <title>Chapter Five: Flattening a Loop</title>
-      <link>http://localhost:1313/articles/article2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/article2/</guid>
-      <description>Flattening arrays into a single array while keeping all elements present.</description>
-    </item>
+    <atom:link href="http://localhost:1313/tags/filler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Filler Blog Two</title>
       <link>http://localhost:1313/blog/filler2/</link>
@@ -49,20 +28,6 @@
       <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/filler1/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor lacinia facilisis. Proin nec porttitor nibh, ut efficitur sapien. Morbi sed velit sit amet odio porta efficitur. Duis quis tincidunt metus. Praesent lacus risus, porttitor vel mattis sed, lobortis eget orci. Duis bibendum, elit eu porta gravida, nulla urna placerat nisi, quis congue turpis augue vel est. Sed sed risus nec leo sollicitudin euismod. Vestibulum pulvinar orci et augue laoreet lobortis. Nullam pellentesque metus a dolor laoreet consectetur. Nullam consectetur feugiat lectus nec vehicula.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Analyzing Evidence in the Christian Tradition</title>
-      <link>http://localhost:1313/blog/blog2/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/blog2/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Analyzing Evidence in Works on the Christian Tradition</title>
-      <link>http://localhost:1313/blog/blog1/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/blog1/</guid>
-      <description>&lt;h2 id=&#34;rel341---fall-2024&#34;&gt;REL341 - Fall 2024&lt;/h2&gt;&#xA;&lt;p&gt;During the Fall of 2024, I took REL 341, Women in Christian Tradition, at Georgetown College with Dr. April Simpson. This course was an explanation of female involvement in the tradition of Christianity from the time of Jesus to present. We read a multitude of articles, books, chapters, and exerpts from women and bystandards of all races, ethnicities, and genders to take our own assumptions of women in Christianity and either build onto them with broader information, or learn how they need to be altered to be more accurate to the 21st century context. Below is a paper I wrote in an attempt to analyze evidence from the readings we encountered throughout the semester.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

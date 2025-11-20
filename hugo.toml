@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "ananke"
+title = 'My Website Warmup'
+theme = "hugo-theme-stack-starter-master"
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -26,6 +26,13 @@ theme = "ananke"
   name = "My Articles!"
   url = "/articles/"
   weight = 3 
+
+
+[[menu.main]]
+  identifier = "blog"
+  name = "My Blogs!"
+  url = "/blog/"
+  weight = 4
 
 
 [params.ananke]
